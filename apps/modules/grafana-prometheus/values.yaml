@@ -1,0 +1,30 @@
+loki:
+  enabled: false
+
+promtail:
+  enabled: false
+
+grafana:
+  enabled: true
+  adminUser: admin
+  adminPassword: admin
+  imageRenderer:
+    enabled: true
+  persistence:
+    enabled: false
+  initChownData:
+    enabled: false # This done as a workaround for this issue https://github.com/grafana/helm-charts/issues/427
+  grafana.ini:
+    server:
+      root_url: https://grafana.ogata.ca
+
+prometheus:
+  enabled: true
+  server:
+    persistentVolume:
+      enabled: false
+
+  alertmanager:
+    persistentVolume:
+      enabled: false
+

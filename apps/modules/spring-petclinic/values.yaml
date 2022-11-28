@@ -1,0 +1,4 @@
+tags:
+  include-observability: false
+  include-log-streaming: false
+  include-request-tracing: false
