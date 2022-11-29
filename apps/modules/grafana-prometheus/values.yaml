@@ -25,7 +25,6 @@ prometheus:
   server:
     persistentVolume:
       enabled: false
-    hostPort: 10000
   alertmanager:
     persistentVolume:
       enabled: false
