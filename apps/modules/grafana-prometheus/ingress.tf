@@ -48,7 +48,7 @@ JSON
         path {
           backend {
             service {
-              name = "grafana-prometheus"
+              name = "loki-stack-grafana"
               port {
                 number = 80
               }

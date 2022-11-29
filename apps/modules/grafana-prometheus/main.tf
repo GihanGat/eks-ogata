@@ -6,7 +6,8 @@ resource "kubernetes_namespace" "grafana_prometheus" {
 
 
 resource "helm_release" "grafana_prometheus" {
-  name       = "grafana-prometheus"
+  #name       = "grafana-prometheus"
+  name       = "loki-stack"
   repository = "https://grafana.github.io/helm-charts"
   chart      = "loki-stack"
   namespace  = var.kubernetes_namespace

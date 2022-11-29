@@ -2,22 +2,18 @@
 #   name = "ogata"
 # }
 
-resource "kubernetes_namespace" "spring-petclinic" {
+resource "kubernetes_namespace" "metrics-server" {
   metadata {
     name = var.kubernetes_namespace
   }
 }
 
-resource "helm_release" "spring-petclinic" {
-  name       = "spring-petclinic"
-  #repository = "${path.module}/todo-app-helm/"
-  chart      = "${path.module}/todo-app-helm/"
+resource "helm_release" "metrics-server" {
+  name       = "metrics-server"
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "metrics-server"
   namespace  = var.kubernetes_namespace
   # version    = var.chart_version
-
-  values = [
-    file("${path.module}/values.yaml")
-  ]
 }
 
 

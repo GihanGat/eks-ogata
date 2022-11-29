@@ -1,10 +1,12 @@
 loki:
-  enabled: false
+  enabled: true
 
 promtail:
-  enabled: false
+  enabled: true
 
 grafana:
+  image:
+    tag: 9.2.5
   enabled: true
   adminUser: admin
   adminPassword: admin
@@ -23,7 +25,7 @@ prometheus:
   server:
     persistentVolume:
       enabled: false
-
+    hostPort: 10000
   alertmanager:
     persistentVolume:
       enabled: false

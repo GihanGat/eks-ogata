@@ -1,5 +1,5 @@
 data "aws_acm_certificate" "cert" {
-  domain      = "grafana.ogata.ca"
+  domain      = "spring-petclinic.ogata.ca"
   statuses    = ["ISSUED"]
   most_recent = true
 }
@@ -48,9 +48,9 @@ JSON
         path {
           backend {
             service {
-              name = "spring-petclinic"
+              name = "spring-petclinic-todo-app-helm"
               port {
-                number = 8080
+                number = 80
               }
             }
           }

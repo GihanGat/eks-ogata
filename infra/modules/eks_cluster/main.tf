@@ -24,9 +24,9 @@ module "eks" {
   self_managed_node_groups = {
     ogata-1 = {
       name                          = "ogata-1"
-      max_size                      = 3
-      desired_size                  = 3
-      min_size = 3
+      max_size                      = 4
+      desired_size                  = 4
+      min_size = 4
       instance_type                 = "t3.xlarge"
       additional_security_group_ids = [aws_security_group.kube_worker_mgmt.id]
       subnets                       = var.private_subnets
